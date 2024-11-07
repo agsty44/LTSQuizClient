@@ -2,6 +2,15 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (receivedNumber == 3) {
         buzzed = 0
         basic.clearScreen()
+    } else if (receivedNumber == teamNumber) {
+        buzzed = 1
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
     }
 })
 input.onButtonPressed(Button.A, function () {
@@ -43,6 +52,3 @@ while (true) {
         break;
     }
 }
-basic.forever(function () {
-	
-})
